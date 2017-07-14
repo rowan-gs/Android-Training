@@ -23,7 +23,7 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.PostHolder>() {
     }
 
     override fun onBindViewHolder(holder: PostHolder, position: Int) {
-
+        holder.bindTo(model.posts[position])
     }
 
     override fun getItemCount(): Int {
@@ -43,11 +43,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.PostHolder>() {
         }
 
         override fun onClick(p0: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
         }
 
         fun bindTo(post: ImgurPost) {
-            // postImage = some cat photo
+            postImage.setImageResource(R.drawable.maxresdefault)
             postTitle.text = post.title
         }
     }
