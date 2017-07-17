@@ -9,6 +9,8 @@ import retrofit2.http.Headers
  * Created by rowan on 14/7/17.
  */
 interface ImgurService {
+    @GET("")
+
     @Headers("Authorization: Client-ID 3436c108ccc17d3")
     @GET("gallery.json")
     fun postList(): Call<ImgurResponse>
