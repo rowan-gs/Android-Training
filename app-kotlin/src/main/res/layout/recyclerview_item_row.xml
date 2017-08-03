@@ -14,9 +14,11 @@
     <TextView
         android:id="@+id/postTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:background="@color/text_overlay_background"
         android:gravity="center"
-        android:text="TextView" />
+        android:paddingLeft="20dp"
+        android:text="TextView"
+        android:textAlignment="viewStart" />
 </FrameLayout>
