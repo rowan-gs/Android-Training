@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import au.com.gridstone.training_kotlin.R
+import com.squareup.picasso.Picasso
 
 
 /**
@@ -23,14 +24,14 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.PostHolder>() {
     }
 
     override fun onBindViewHolder(holder: PostHolder, position: Int) {
-
+        holder.bindTo(model.posts[position])
     }
 
     override fun getItemCount(): Int {
         return model.posts.size
     }
 
-    class PostHolder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
+    class PostHolder(val v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
 
         private val postImage: ImageView
         private val postTitle: TextView
@@ -40,14 +41,15 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.PostHolder>() {
             postTitle = v.findViewById(R.id.postTitle) as TextView
 
             v.setOnClickListener(this)
+
         }
 
         override fun onClick(p0: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
         }
 
         fun bindTo(post: ImgurPost) {
-            // postImage = some cat photo
+            Picasso.with(v.context).load(R.drawable.maxresdefault).fit().centerCrop().into(postImage)
             postTitle.text = post.title
         }
     }

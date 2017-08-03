@@ -9,19 +9,25 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
 
-    <activity android:name=".LoadingActivity">
-
+    <activity
+        android:name=".SplashActivity"
+        android:theme="@style/SplashTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
-
     </activity>
 
     <activity android:name=".ListActivity">
 
     </activity>
 
+    <activity android:name=".DetailsActivity">
+
+    </activity>
+
   </application>
+
+  <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
