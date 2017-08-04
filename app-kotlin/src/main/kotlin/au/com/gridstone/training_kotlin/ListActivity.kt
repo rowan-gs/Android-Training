@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ProgressBar
 import au.com.gridstone.training_kotlin.model.ImgurResponse
@@ -38,14 +39,15 @@ class ListActivity : AppCompatActivity() {
 
         val callback = object:Callback<ImgurResponse> {
             override fun onResponse(call: Call<ImgurResponse>?, response: Response<ImgurResponse>?) {
-                println("done! :)")
-                response
+                println("done!")
+                println(response)
                 progressSpinner.visibility = View.INVISIBLE
                 recyclerView.visibility = View.VISIBLE
             }
 
             override fun onFailure(call: Call<ImgurResponse>?, t: Throwable?) {
-                println("failed! :)")
+                println("failed!")
+                t?.printStackTrace()
             }
 
         }
@@ -54,3 +56,4 @@ class ListActivity : AppCompatActivity() {
         call.enqueue(callback)
     }
 }
+

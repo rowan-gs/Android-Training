@@ -1,6 +1,7 @@
 package au.com.gridstone.training_kotlin.model
 
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 
@@ -9,9 +10,12 @@ import retrofit2.http.Headers
  * Created by rowan on 14/7/17.
  */
 interface ImgurService {
-    @GET("")
 
-    @Headers("Authorization: Client-ID 3436c108ccc17d3")
-    @GET("gallery.json")
+//    @Headers("Authorization: Client-ID a0d8a56262482f3")
+//    @POST("oauth2/token")
+//    fun generateAccessToken(): Call
+
+    @Headers("Authorization: Client-ID a0d8a56262482f3")
+    @GET("gallery/hot/viral/1")
     fun postList(): Call<ImgurResponse>
 }
