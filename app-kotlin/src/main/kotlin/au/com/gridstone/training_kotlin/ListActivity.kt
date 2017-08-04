@@ -40,13 +40,14 @@ class ListActivity : AppCompatActivity() {
         val callback = object:Callback<ImgurResponse> {
             override fun onResponse(call: Call<ImgurResponse>?, response: Response<ImgurResponse>?) {
                 println("done!")
-                response
+                println(response)
                 progressSpinner.visibility = View.INVISIBLE
                 recyclerView.visibility = View.VISIBLE
             }
 
             override fun onFailure(call: Call<ImgurResponse>?, t: Throwable?) {
                 println("failed!")
+                t?.printStackTrace()
             }
 
         }

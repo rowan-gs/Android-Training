@@ -1,5 +1,6 @@
 package au.com.gridstone.training_kotlin.model
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import au.com.gridstone.training_kotlin.R
 import com.squareup.picasso.Picasso
-
 
 /**
  * Created by rowan on 13/7/17.
@@ -41,10 +41,11 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.PostHolder>() {
             postTitle = v.findViewById(R.id.postTitle) as TextView
 
             v.setOnClickListener(this)
-
         }
 
         override fun onClick(p0: View?) {
+            println("you tapped a thing!")
+            // need application context
 
         }
 

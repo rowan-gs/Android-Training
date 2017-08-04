@@ -7,6 +7,6 @@ class Model {
     var posts: Array<ImgurPost>
 
     init {
-        posts = arrayOf(ImgurPost(), ImgurPost(), ImgurPost(), ImgurPost(), ImgurPost())
+        posts = arrayOf()
     }
 }
